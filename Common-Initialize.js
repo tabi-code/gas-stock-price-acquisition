@@ -30,14 +30,9 @@ function CreateAndDeleteSheet(SheetsAndColumns){
       SetRangeValues(NewSheet, 1, 1, SheetsAndColumns[key]);
     }
   }
-  for(var i = 0; i < Sheet.length; i++){
-    if(SheetsAndColumns[sheet[i].getName]){
-      Sheet.deleteSheet(Sheet[i])
+  for(var i = 0; i < Sheets.length; i++){
+    if(!SheetsAndColumns[Sheets[i].getSheetName()]){
+      Sheet.deleteSheet(Sheets[i])
     }
   }
-}
-
-function TestFunciton(){
-  lst = {"test": [["test1", "test2", "test3"]]}
-  CreateAndDeleteSheet(lst)
 }
